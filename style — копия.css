@@ -1,50 +1,91 @@
-@import url('https://fonts.googleapis.com/css?family=Russo+One');
-
-body {
-  font-family: Russo One;
+*{
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  user-select: none;
-  background-color: lighten(grey, 5%);
+  font-size: 24px;
 }
-#root {
-  min-height: 100vh;
+
+h2 {
+  font-size: 28px
+}
+
+#drum-machine {
+  margin: 15px;
+  height: 80vh;
+  display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 
-.drum-pad {
-  border: 4px solid black;
-  border-radius: 5px;
-  margin: 1rem;
-  font-size: 1.5rem;
-  padding: 1rem .5rem;
-  transition: all 0.07s;
-  width: 100px;
-  text-align: center;
-  color: white;
-  background: rgba(0,0,0,0.4);
-  text-shadow: 0 0 5px black;
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    grid-gap: 15px;
+    margin-top: 40px;
+    border-radius: 15px;
+    grid-template-columns: 1fr;
+    background-image: linear-gradient(
+-225deg
+, #ccc 35%, #b9deff 100%);
 }
 
-.playing {
-  transition: scale(1.1);
-  border-color: #ffc600;
-  box-shadow: 0 0 10px #ffc600;
+.keyboard {
+    display: grid;
+    grid-gap: 35px;
+    padding-right: 50px;
+    grid-template-columns: repeat(3, 1fr);
 }
 
-
-kbd {
-  display: block;
-  font-size: 40px;
-}
-
-.sound { 
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #ffc600;
-}
-
+.keyboard .drum-pad {
   
+  width: 200%;
+  height: 50px;
+  outline: none;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: #288;
+  transition: all .3s ease-in-out
+}
+
+@media(min-width: 768px){
+  .wrapper {
+      width: 680px;
+  }
+}
+
+@media(min-width: 992px){
+  .wrapper {
+     grid-template-columns: 1fr 1fr;
+  }
+}
+
+.controle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.controle > button,
+.controle > input,
+.controle > h2{
+  margin-bottom: 10px;
+  padding-right: -30px;
+}
+
+.controle button{
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 8px 20px;
+  border-radius: 25px;
+  background-color: #666;
+}
